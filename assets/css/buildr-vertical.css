@@ -1,0 +1,19 @@
+header#masthead.header-style-vertical {
+    width: 280px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    background: #141414;
+    color: #fff;
+    z-index: 9999;
+}
+
+div#content.navbar-template-vertical {
+    margin-left: 280px;
+    margin-right: 0 !important;
+    width: calc(100% - 280px);
+}
+
+div#content.navbar-template-vertical .container {
+    max-width: calc(100% - 280px);
+}
