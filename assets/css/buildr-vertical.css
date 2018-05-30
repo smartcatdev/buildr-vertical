@@ -1,19 +1,140 @@
-header#masthead.header-style-vertical {
-    width: 280px;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    background: #141414;
-    color: #fff;
+#vertical-navbar-push {
+    position: relative;
+    right: 0 !important;
+    left: unset !important;
+    transition: all 400ms ease-in-out !important;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+header#masthead.header-style-vertical #vertical-header-wrap {
+    transition: all 400ms ease-in-out !important;
     z-index: 9999;
 }
 
-div#content.navbar-template-vertical {
-    margin-left: 280px;
-    margin-right: 0 !important;
-    width: calc(100% - 280px);
+body.admin-bar header#masthead.header-style-vertical #vertical-header-wrap {
+    top: 32px !important;
 }
 
-div#content.navbar-template-vertical .container {
+#vertical-navbar-push.expanded {
     max-width: calc(100% - 280px);
+    margin-left: 280px;
+}
+
+@media (max-width:1449px) {
+
+    #vertical-navbar-push.expanded .container {
+        width: 100%;
+        max-width: calc(1170px - 280px);
+    }
+    
+}
+
+@media (min-width:1450px) {
+    #vertical-navbar-push.expanded .container {
+        max-width: 1170px;
+    }
+}
+
+@media (max-width:991px) {
+    header#masthead.header-style-vertical #vertical-header-wrap {
+        display: none !important;
+    }
+    #vertical-navbar-push {
+        max-width: 100% !important;
+        margin-left: 0px !important;
+    }
+}
+
+/* Branding */
+
+header#masthead.header-style-vertical div#vertical-header-wrap #custom-logo-wrap {
+    padding: 0;
+}
+
+header#masthead.header-style-vertical div#vertical-header-wrap #custom-logo-wrap img.custom-logo {
+    opacity: 1 !important;
+    padding: 0;
+}
+
+/* Menu */
+
+#vertical-header-wrap ul.vertical-header-menu,
+#vertical-header-wrap ul#mobile-menu {
+    list-style: none;
+    margin: 0;
+    padding: 15px;
+}
+
+#vertical-header-wrap ul.vertical-header-menu > li:before,
+#vertical-header-wrap ul#mobile-menu:before {
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition:  all 0.5s ease-in-out;
+    -o-transition:  all 0.5s ease-in-out;
+    transition:  all 0.5s ease-in-out;
+}
+
+
+#vertical-header-wrap ul#mobile-menu > li a {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition:  all 0.2s ease-in-out;
+    -o-transition:  all 0.2s ease-in-out;
+    transition:  all 0.2s ease-in-out;
+}
+
+#vertical-header-wrap ul.vertical-header-menu ul.sub-menu {
+    list-style: none;
+    margin: 0;
+    padding-left: 20px;
+}
+
+#vertical-header-wrap ul.vertical-header-menu > li:hover ul.sub-menu {
+    
+}
+
+#vertical-header-wrap ul.vertical-header-menu > li:hover ul.sub-menu > li {
+    line-height: 1.25em;
+}
+
+#vertical-header-wrap ul.vertical-header-menu > li {
+    line-height: 1.25em;
+    padding-left: 15px;
+    position: relative;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition:  all 0.2s ease-in;
+    -o-transition:  all 0.2s ease-in;
+    transition:  all 0.2s ease-in;
+}
+
+#vertical-header-wrap ul.vertical-header-menu > li:hover {
+    padding-left: 15px;
+}
+
+#vertical-header-wrap ul.vertical-header-menu > li:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    margin: 0;
+    visibility: hidden;
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+    background: #cacaca;
+}
+
+#vertical-header-wrap ul.vertical-header-menu > li:hover:before {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+}
+
+
+/* Social */
+
+header#masthead.header-style-vertical .navbar-social {
+    text-align: center;
 }
