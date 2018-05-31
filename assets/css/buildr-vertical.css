@@ -10,10 +10,31 @@
 header#masthead.header-style-vertical #vertical-header-wrap {
     transition: all 400ms ease-in-out !important;
     z-index: 9999;
+    display: none;
 }
 
 body.admin-bar header#masthead.header-style-vertical #vertical-header-wrap {
     top: 32px !important;
+}
+
+#vertical-menu-toggle {
+    margin: 10px 0 0 11px !important;
+}
+
+span#vertical-menu-toggle-wrap {
+    position: absolute;
+    left: calc(100% + 15px);
+    top: 15px;
+    background: #141414;
+    z-index: 999999; 
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    height: 40px;
+    width: 40px;
+    border-radius: 2px;
+    text-align: center;
+    line-height: 40px;
 }
 
 #vertical-navbar-push.expanded {
@@ -46,6 +67,10 @@ body.admin-bar header#masthead.header-style-vertical #vertical-header-wrap {
     }
 }
 
+header#masthead.header-style-vertical #slim-header-wrap {
+    top: 0 !important;
+}
+
 /* Branding */
 
 header#masthead.header-style-vertical div#vertical-header-wrap #custom-logo-wrap {
@@ -63,7 +88,17 @@ header#masthead.header-style-vertical div#vertical-header-wrap #custom-logo-wrap
 #vertical-header-wrap ul#mobile-menu {
     list-style: none;
     margin: 0;
-    padding: 15px;
+    padding: 0 15px;
+}
+
+#vertical-header-menu-wrap {
+    margin-top: 15px;
+    padding: 30px 15px;
+    border-top: thin solid;
+}
+
+#vertical-header-menu-wrap ul#vertical-header-primary {
+    padding: 0;
 }
 
 #vertical-header-wrap ul.vertical-header-menu > li:before,
@@ -85,15 +120,22 @@ header#masthead.header-style-vertical div#vertical-header-wrap #custom-logo-wrap
 #vertical-header-wrap ul.vertical-header-menu ul.sub-menu {
     list-style: none;
     margin: 0;
-    padding-left: 20px;
-}
-
-#vertical-header-wrap ul.vertical-header-menu > li:hover ul.sub-menu {
-    
+    padding-left: 15px;
+    position: relative;
+    display: none;
 }
 
 #vertical-header-wrap ul.vertical-header-menu > li:hover ul.sub-menu > li {
     line-height: 1.25em;
+}
+
+#vertical-header-wrap ul.vertical-header-menu li {
+    padding-top: 4px;
+    padding-bottom: 4px;
+} 
+
+#vertical-header-wrap ul.vertical-header-menu ul.sub-menu > li:first-child {
+    padding-top: 10px;
 }
 
 #vertical-header-wrap ul.vertical-header-menu > li {
@@ -106,15 +148,23 @@ header#masthead.header-style-vertical div#vertical-header-wrap #custom-logo-wrap
     transition:  all 0.2s ease-in;
 }
 
-#vertical-header-wrap ul.vertical-header-menu > li:hover {
-    padding-left: 15px;
+#vertical-header-wrap ul.vertical-header-menu li.menu-item-has-children > span {
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition:  all 0.5s ease-in-out;
+    -o-transition:  all 0.5s ease-in-out;
+    transition:  all 0.5s ease-in-out;
+    font-family: Helvetica, sans-serif !important;
+    display: inline-block;
+    cursor: pointer;
+    vertical-align: text-top;
+    font-size: 1.24em;
 }
 
 #vertical-header-wrap ul.vertical-header-menu > li:before {
     content: "";
     position: absolute;
     height: 100%;
-    width: 2px;
+    width: 1px;
     opacity: 0;
     top: 0;
     left: 0;
@@ -122,7 +172,6 @@ header#masthead.header-style-vertical div#vertical-header-wrap #custom-logo-wrap
     visibility: hidden;
     -webkit-transform: scaleY(0);
     transform: scaleY(0);
-    background: #cacaca;
 }
 
 #vertical-header-wrap ul.vertical-header-menu > li:hover:before {
@@ -132,9 +181,60 @@ header#masthead.header-style-vertical div#vertical-header-wrap #custom-logo-wrap
     transform: scaleY(1);
 }
 
-
 /* Social */
 
 header#masthead.header-style-vertical .navbar-social {
     text-align: center;
+}
+
+/* Sidebar Footer */
+div#vertical-header-wrap #footer-branding-wrap {
+    text-align: center;
+    padding: 45px 15px 15px 15px;
+    font-size: 12px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+div#footer-branding-wrap .site-title {
+    margin-top: 0;
+}
+
+div#vertical-header-wrap #footer-branding-wrap span.buildr_by {
+    vertical-align: middle;
+}
+
+div#vertical-header-wrap #footer-branding-wrap img.custom-logo.alternate {
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+body.admin-bar div#vertical-header-wrap #footer-branding-wrap {
+    bottom: 32px;
+}
+
+div#vertical-header-wrap #footer-branding-wrap svg {
+    width: 65px;
+    margin-bottom: -3px;
+    margin-left: 2px;
+}
+
+span#vertical-menu-toggle-wrap #vertical-menu-toggle .bar.animate {
+    background: rgba(0,0,0,0.0);
+}
+
+@media (min-width:992px) {
+    header#masthead.header-style-vertical #slim-header-wrap {
+        display: none;
+    }
+}
+
+header#masthead.header-style-vertical #slim-header-wrap .navbar-social {
+    margin-top: 15px;
+}
+
+div#vertical-header-wrap #footer-branding-wrap img.custom-logo.alternate {
+    opacity: 1 !important;
 }

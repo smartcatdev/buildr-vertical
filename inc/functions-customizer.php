@@ -64,6 +64,27 @@ $data = array (
                     )
 
                 ),
+                
+                // Section : Navbar Colors -------------------------------------
+                'section_nav_colors' => array (
+
+                    'title' => __( 'Colors', 'buildr' ),
+                    'options' => array (
+                        
+                        BUILDR_VERTICAL_OPTIONS::VERT_NAVBAR_TAB_BACKGROUND => array (
+                            'type'          => 'color',
+                            'label'         => __( 'Vertical Navbar Tab - Background Color', 'buildr' ),
+                            'default'       => BUILDR_VERTICAL_DEFAULTS::VERT_NAVBAR_TAB_BACKGROUND,
+                        ),
+                        BUILDR_VERTICAL_OPTIONS::VERT_NAVBAR_TAB_FOREGROUND => array (
+                            'type'          => 'color',
+                            'label'         => __( 'Vertical Navbar Tab - Foreground Color', 'buildr' ),
+                            'default'       => BUILDR_VERTICAL_DEFAULTS::VERT_NAVBAR_TAB_FOREGROUND,
+                        ),
+
+                    )
+
+                ),
 
             ), // End of Navbar Sections
 
