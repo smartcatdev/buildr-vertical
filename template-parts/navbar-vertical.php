@@ -79,13 +79,15 @@
     
     </div>
     
-    <div id="vertical-header-wrap">
+    <div id="vertical-header-wrap" class="<?php echo get_theme_mod( BUILDR_VERTICAL_OPTIONS::VERT_NAVBAR_DISPLAY_SETTING, BUILDR_VERTICAL_DEFAULTS::VERT_NAVBAR_DISPLAY_SETTING ) == 'always'? 'always-visible expanded' : ''; ?>">
         
-        <span id="vertical-menu-toggle-wrap">
-            <div id="vertical-menu-toggle">
-                <div class="bar"></div>
-            </div>
-        </span>
+        <?php if ( get_theme_mod( BUILDR_VERTICAL_OPTIONS::VERT_NAVBAR_DISPLAY_SETTING, BUILDR_VERTICAL_DEFAULTS::VERT_NAVBAR_DISPLAY_SETTING ) == 'toggled' ) : ?>
+            <span id="vertical-menu-toggle-wrap">
+                <div id="vertical-menu-toggle">
+                    <div class="bar"></div>
+                </div>
+            </span>
+        <?php endif; ?>
     
         <?php if ( function_exists( 'has_custom_logo' ) && has_custom_logo() && get_theme_mod( BUILDR_OPTIONS::NAVBAR_BRANDING_WHAT_TO_SHOW, BUILDR_DEFAULTS::NAVBAR_BRANDING_WHAT_TO_SHOW ) == 'logo' ) : ?>
 

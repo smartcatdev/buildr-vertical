@@ -37,11 +37,11 @@ function buildr_vertical_wp_head_styles() { ?>
         }
         
         @media (max-width:991px) {
-            header#masthead.header-style-vertical div#vertical-header-wrap #custom-logo-wrap {
+            header#masthead.header-style-vertical #custom-logo-wrap {
                 margin-top: 0;
                 margin-bottom: 0;
-                padding-top: <?php echo intval( get_theme_mod( BUILDR_OPTIONS::NAVBAR_BRANDING_SPACE_TOP_DSK, BUILDR_DEFAULTS::NAVBAR_BRANDING_SPACE_TOP_DSK ) ); ?>px;
-                padding-bottom: <?php echo intval( get_theme_mod( BUILDR_OPTIONS::NAVBAR_BRANDING_SPACE_BOTTOM_DSK, BUILDR_DEFAULTS::NAVBAR_BRANDING_SPACE_BOTTOM_DSK ) ); ?>px;
+                padding-top: <?php echo intval( get_theme_mod( BUILDR_OPTIONS::NAVBAR_BRANDING_SPACE_TOP_MBL, BUILDR_DEFAULTS::NAVBAR_BRANDING_SPACE_TOP_MBL ) ); ?>px !important;
+                padding-bottom: <?php echo intval( get_theme_mod( BUILDR_OPTIONS::NAVBAR_BRANDING_SPACE_BOTTOM_MBL, BUILDR_DEFAULTS::NAVBAR_BRANDING_SPACE_BOTTOM_MBL ) ); ?>px !important;
             }
         }
         
@@ -143,23 +143,9 @@ function buildr_vertical_wp_head_styles() { ?>
             
         /* ----- Navbar Colors & Image -------------------------------------- */
 
-        <?php if ( get_theme_mod( BUILDR_OPTIONS::NAVBAR_BG_STYLE, BUILDR_DEFAULTS::NAVBAR_BG_STYLE ) == 'color' ) : ?>
-
-            header#masthead.header-style-vertical #vertical-header-wrap {
-                background-color: <?php echo esc_attr( $theme_colors['navbar_bg'] ); ?>;
-            }
-
-        <?php else : ?>
-
-            header#masthead.header-style-vertical #vertical-header-wrap {
-                background-image: url(<?php echo esc_url( get_theme_mod( BUILDR_OPTIONS::NAVBAR_BG_IMAGE, BUILDR_DEFAULTS::NAVBAR_BG_IMAGE ) ); ?>);
-            }
-
-            header#masthead.header-style-vertical ul#mobile-menu {
-                background-color: <?php echo esc_attr( $theme_colors['navbar_bg'] ); ?>;
-            }
-
-        <?php endif; ?>
+        header#masthead.header-style-vertical #vertical-header-wrap {
+            background-color: <?php echo esc_attr( $theme_colors['navbar_bg'] ); ?>;
+        }
         
         /* ---------------------------------------------------------------------
          * Other

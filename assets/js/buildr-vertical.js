@@ -16,14 +16,18 @@ jQuery(document).ready(function ($) {
     });
 
     /* -------------------------------------------------------------------------
-     * Cart: Slide In Side-panel
+     * Vertical Navbar Slide
      * ---------------------------------------------------------------------- */
+    
+    var default_state;
+    default_state = ( buildr_vertical.state == 'always' ) ? 'open' : 'closed';
     
     $('#vertical-menu-toggle-wrap').bigSlide({
         menu: 'header#masthead.header-style-vertical #vertical-header-wrap',
         push: '#vertical-navbar-push',
         menuWidth: '280px',
         side: 'left',
+        state: default_state,
         beforeOpen: function() {
             $('#vertical-menu-toggle .bar').toggleClass('animate');
             $('#vertical-navbar-push,header#masthead.header-style-vertical #vertical-header-wrap').addClass('expanded');
@@ -47,6 +51,6 @@ jQuery(document).ready(function ($) {
         position: 'right'
     });
     
-    $('#vert-nav-slim-scroll-wrap ul#vertical-header-primary').css('padding-bottom', $('div#vertical-header-wrap #footer-branding-wrap').outerHeight() + 150 );
+    $('#vert-nav-slim-scroll-wrap ul#vertical-header-primary').css('padding-bottom', $('div#vertical-header-wrap #footer-branding-wrap').outerHeight() + 220 );
     
 });

@@ -1,7 +1,9 @@
 <?php
 
 function buildr_vertical_after_setup_theme() {
-    require get_stylesheet_directory() . '/inc/functions-customizer.php';    
+    if ( function_exists('buildr\get_plugin_path' ) ) {
+        require get_stylesheet_directory() . '/inc/functions-customizer.php';    
+    }
 }
 add_action( 'after_setup_theme', 'buildr_vertical_after_setup_theme', 100 );  
 

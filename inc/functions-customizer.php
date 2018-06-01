@@ -61,6 +61,16 @@ $data = array (
                             )
                         ),
                         
+                        BUILDR_VERTICAL_OPTIONS::VERT_NAVBAR_DISPLAY_SETTING => array (
+                            'type'          => 'radio-toggle',
+                            'label'         => __( 'Vertical Navbar - Visibility', 'buildr' ),
+                            'default'       => BUILDR_VERTICAL_DEFAULTS::VERT_NAVBAR_DISPLAY_SETTING,
+                            'choices'   => array (
+                                'toggled'       => __( 'Openable (Hidden by Default)', 'buildr' ),
+                                'always'        => __( 'Always Visible', 'buildr' ),
+                            )
+                        ),
+                        
                     )
 
                 ),

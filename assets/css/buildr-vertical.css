@@ -130,12 +130,12 @@ header#masthead.header-style-vertical div#vertical-header-wrap #custom-logo-wrap
 }
 
 #vertical-header-wrap ul.vertical-header-menu li {
-    padding-top: 4px;
-    padding-bottom: 4px;
+    padding-top: 8px;
+    padding-bottom: 8px;
 } 
 
 #vertical-header-wrap ul.vertical-header-menu ul.sub-menu > li:first-child {
-    padding-top: 10px;
+    padding-top: 16px;
 }
 
 #vertical-header-wrap ul.vertical-header-menu > li {
@@ -237,4 +237,8 @@ header#masthead.header-style-vertical #slim-header-wrap .navbar-social {
 
 div#vertical-header-wrap #footer-branding-wrap img.custom-logo.alternate {
     opacity: 1 !important;
+}
+
+header#masthead.header-style-vertical #vertical-header-wrap.always-visible {
+    left: 0 !important;
 }

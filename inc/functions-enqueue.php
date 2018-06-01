@@ -23,5 +23,13 @@ function buildr_vertical_scripts() {
         true 
     );
     
+    // Localization Data
+    $buildr_vertical_JS = array(
+        'state'    => get_theme_mod( BUILDR_VERTICAL_OPTIONS::VERT_NAVBAR_DISPLAY_SETTING, BUILDR_VERTICAL_DEFAULTS::VERT_NAVBAR_DISPLAY_SETTING ),
+    );
+    
+    // Localizations
+    wp_localize_script( 'buildr-vertical', 'buildr_vertical', $buildr_vertical_JS );
+    
 }
 add_action( 'wp_enqueue_scripts', 'buildr_vertical_scripts' );
