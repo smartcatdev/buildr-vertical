@@ -242,3 +242,76 @@ div#vertical-header-wrap #footer-branding-wrap img.custom-logo.alternate {
 header#masthead.header-style-vertical #vertical-header-wrap.always-visible {
     left: 0 !important;
 }
+
+/* -----------------------------------------------------------------------------
+ * Hamburger Menu - Cross Animation
+ * -------------------------------------------------------------------------- */
+#mobile-menu-trigger,
+#vertical-menu-toggle {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 15px auto 0;
+    width: 18px;
+    height: 33px;
+    cursor: pointer;
+    padding-bottom: 15px;
+}
+
+#mobile-menu-trigger .bar,
+#mobile-menu-trigger .bar:after,
+#mobile-menu-trigger .bar:before,
+#vertical-menu-toggle .bar,
+#vertical-menu-toggle .bar:after,
+#vertical-menu-toggle .bar:before {
+    width: 18px;
+    height: 2px;
+}
+
+#mobile-menu-trigger .bar,
+#vertical-menu-toggle .bar {
+    position: relative;
+    transform: translateY(9px);
+    background: white;
+    transition: all 0ms 300ms;
+}
+#mobile-menu-trigger .bar.animate,
+#vertical-menu-toggle .bar.animate {
+    background: rgba(255, 255, 255, 0);
+}
+
+#mobile-menu-trigger .bar:before,
+#vertical-menu-toggle .bar:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 6px;
+    background: white;
+    transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#mobile-menu-trigger .bar:after,
+#vertical-menu-toggle .bar:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 6px;
+    background: white;
+    transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#mobile-menu-trigger .bar.animate:after,
+#vertical-menu-toggle .bar.animate:after {
+    top: 0;
+    transform: rotate(45deg);
+    transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#mobile-menu-trigger .bar.animate:before,
+#vertical-menu-toggle .bar.animate:before {
+    bottom: 0;
+    transform: rotate(-45deg);
+    transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
